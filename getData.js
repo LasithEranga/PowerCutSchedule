@@ -1,5 +1,6 @@
 const request = require("request");
 const fs = require("fs");
+const { time } = require("console");
 
 const date = new Date();
 ("use strict");
@@ -23,32 +24,30 @@ request.post(
     } else if (res.statusCode !== 200) {
       console.log("Status:", res.statusCode);
     } else {
-      //clean the file 
-      fs.writeFile("./test.txt","",(err)=>{
+      //clean the file
+      fs.writeFile("./test.txt", "", (err) => {
         if (err) {
           console.error(err);
           return;
         }
-      })
+      });
       //write updated values
-      data.filter((item)=>{
-          if(item.loadShedGroupId == "I" && new Date(item.startTime).getDate() == date.getDate() ){
-            let string = item.startTime.slice(11) + "\n" + item.endTime.slice(11) + "\n"
-            console.log(string)
-            fs.appendFile("./test.txt", string, (err) => {
-                      if (err) {
-                        console.error(err);
-                        return;
-                      }
-                      //file written successfully
-                    });
-          }
-        })
-      
+      let times = [];
+      data.filter((item) => {
+        if (item.loadShedGroupId == "I" && new Date(item.startTime).getDate() == date.getDate()) {
+          times.push(item.startTime,item.endTime)
+        }
+      });
+      times.sort();
+      console.log(times);
+      let string = times[0].slice(11) + "\n" + times[1].slice(11) + "\n"+ times[2].slice(11) + "\n"+ times[3].slice(11) + "\n"
+      fs.appendFile("./test.txt", string, (err) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        //file written successfully
+      });
     }
   }
 );
-
-
-
-
