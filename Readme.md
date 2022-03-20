@@ -5,7 +5,7 @@ Desktop application using C# and Node.js to get powercut schedule
 <table>
   <tr>
     <td>  
-      <img src=https://github.com/LasithEranga/PowerCutSchedule/blob/master/Screenshots/img1.jpg> 
+      <img src=https://github.com/LasithEranga/PowerCutSchedule/blob/master/Screenshots/img11.jpg> 
     </td>
   </tr>
   
