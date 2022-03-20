@@ -1,5 +1,5 @@
 # PowerCutSchedule
-Desktop application to view powercut schedule
+Desktop application using C# and Node.js to get powercut schedule 
 
 # Screenshots
 <table>
