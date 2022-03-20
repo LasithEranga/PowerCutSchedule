@@ -9,4 +9,4 @@ Desktop application using C# and Node.js to get powercut schedule
     </td>
   </tr>
   
-</table>
+</table> 
