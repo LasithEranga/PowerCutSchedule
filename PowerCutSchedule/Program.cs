@@ -15,6 +15,7 @@ namespace PowerCutSchedule
         [STAThread]
         static void Main()
         {
+            //executing the node js application to send the request and update data
 
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
@@ -28,7 +29,8 @@ namespace PowerCutSchedule
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
-            Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+
+            //starting the application
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
